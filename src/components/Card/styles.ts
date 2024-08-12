@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
@@ -88,4 +89,15 @@ export const FooterRow = styled.div`
 
 export const BoldText = styled.p`
   font-weight: bold;
+`;
+
+export const StyledImage = styled(Image)`
+  object-fit: cover;
+`;
+
+export const IconButton = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
 `;

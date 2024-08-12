@@ -1,18 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
-import { BoldText, CardContainer, CardFooter, CardHeader, CardImageContainer, CardMetric, CardMetrics, CardTitle, FooterRow } from './styles';
+import { BoldText, CardContainer, CardFooter, CardHeader, CardImageContainer, CardMetric, CardMetrics, CardTitle, FooterRow, IconButton, StyledImage } from './styles';
 import { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({ post, onCopyUrl }) => {
   return (
     <CardContainer>
       <CardImageContainer>
-        <Image src={post.imageUrl} alt={post.account} fill priority  sizes="auto" />
+        <StyledImage src={post.imageUrl} alt={post.account} width={300} height={300} priority sizes="auto" />
         <CardHeader>
           <CardTitle>{post.account}</CardTitle>
-          <button onClick={onCopyUrl} style={{ background: 'none', border: 'none', padding: 0 }}>
+          <IconButton onClick={onCopyUrl}>
             <Image src="/svgs/attach.svg" width={20} height={20} alt="Link" />
-          </button>
+          </IconButton>
         </CardHeader>
       </CardImageContainer>
       <CardMetrics>
